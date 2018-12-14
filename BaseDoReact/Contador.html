@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello React</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="app">
+        <!-- minha aplicação é renderizada aqui -->
+    </div>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+
+    <!-- Load our React component. -->
+    <script>
+        class TextAreaCounter extends React.Component {
+            constructor(props) {
+                super(props);
+                
+                this.state = {
+                    text: this.props.initialText,
+                };
+
+                this._textChange = this._textChange.bind(this);
+            }
+
+            _textChange(ev) {
+                this.setState({
+                    text: ev.target.value,
+                })
+            }
+
+            render() {
+                return React.createElement(
+                    "div",
+                    null,
+                    React.createElement(
+                        "textarea",
+                        {
+                            value: this.state.text,
+                            onChange: this._textChange
+                        }
+                    ),
+                    React.createElement("h3", null, this.state.text.length)
+                );
+            }
+        }
+        
+        TextAreaCounter.propTypes = {
+            initialText: PropTypes.string
+        };
+        
+        TextAreaCounter.defaultProps = {
+            initialText: ""
+        };
+
+        const myTextAreaCounter = ReactDOM.render(
+            React.createElement(TextAreaCounter, { initialText: "Roger" }),
+            document.getElementById("app")
+        );
+
+        /**
+         * Not always good
+         * myTextAreaCounter.setState({text: "busanfino"});
+         * 
+         * Get Element Node
+         * ReactDOM.findDOMNode(myTextAreaCounter);
+         * 
+        */
+    </script>
+</body>
+
+</html>

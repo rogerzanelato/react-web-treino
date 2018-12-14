@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello React</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="app">
+        <!-- minha aplicação é renderizada aqui -->
+    </div>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+
+    <!-- Load our React component. -->
+    <script>
+        class Component extends React.Component {
+            render() {
+                return React.createElement("span", null, "My name is " + this.props.firstName + " " + this.props.lastName);
+            }
+        }
+        
+        Component.propTypes = {
+            firstName: PropTypes.string.isRequired,
+            lastName: PropTypes.string
+        };
+        
+        Component.defaultProps = {
+            lastName: ""
+        };
+
+        ReactDOM.render(
+            React.createElement(Component, { firstName: "Roger" }),
+            document.getElementById("app")
+        );
+    </script>
+</body>
+
+</html>
