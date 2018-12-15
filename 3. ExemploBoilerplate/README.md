@@ -1,8 +1,10 @@
 # Resumo
 Exemplo de BoilerPlate básico para desenvolvimento e deploy baseado em Shell.
 
-## Executando o Projeto Desenvolvimento
+## Executando o Projeto Dev
 ```shell
+yarn install
+
 # Faz o primeiro build
 sh scripts/build.sh
 
@@ -79,6 +81,7 @@ browserify js/build/app.js -o bundle.js
 O comando acima irá começar por app.js, seguir todas as dependências e escrever o resultado em bundle.js.
 
 - Empacotar o CSS
+
 O empacotamento do CSS é simples, para o projeto atual, podemos fazê-lo usando apenas a linha de comando, embora, precisemos alterar a o path da imagens com *sed*;
 ```shell
 cat css/*/* css/*.css | sed 's/..\/..\/images/images/g' > bundle.css
