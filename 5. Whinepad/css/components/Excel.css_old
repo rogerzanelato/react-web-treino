@@ -1,0 +1,45 @@
+.Excel table {
+    border-collapse: collapse;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+}
+
+.Excel table thead tr,
+.Excel table tbody tr {
+    border: 1px solid black;
+}
+
+.Excel table tbody tr:hover {
+    background: #757575;
+}
+
+.Excel table thead tr th {
+    padding: 3px;
+}
+
+.Excel table tbody tr td {
+    padding: 5px;
+}
+
+.Excel .toolbar {
+    padding-bottom: 10px;
+}
+
+.Excel .toolbar button,
+.Excel .toolbar a {
+    border-radius: 3px;
+    background: #e91e63;
+    color: #FFF;
+    border: 1px solid #d81b60;
+    padding: 5px 10px;
+    font-weight: 600;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0px 5px 0px 0px;
+}
+
+.Excel .toolbar button:hover,
+.Excel .toolbar a:hover {
+    cursor: pointer;
+    background: #d81b60;
+}

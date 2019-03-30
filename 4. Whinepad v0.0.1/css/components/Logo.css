@@ -1,0 +1,10 @@
+.Logo {
+    background-image: url('../../images/whinepad-logo.png');
+    background-size: cover;
+    /* background-repeat: round; */
+    background-color: black;
+    display: inline-block;
+    vertical-align: middle;
+    height: 75px;
+    width: 120px;
+}
